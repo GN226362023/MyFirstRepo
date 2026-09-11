@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Order fresh food and coffee online for pickup from Campus Corner Cafe.">
+  <meta name="theme-color" content="#34251f">
+  <title>Campus Corner Cafe | Order for Pickup</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="utility-bar" aria-label="Accessibility controls">
+    <div class="container utility-inner">
+      <p><span aria-hidden="true">●</span> Open today until 5:30 pm</p>
+      <div class="accessibility-tools">
+        <span>Text size</span>
+        <button id="fontDecrease" class="icon-button compact" type="button" aria-label="Decrease font size">A−</button>
+        <button id="fontIncrease" class="icon-button compact" type="button" aria-label="Increase font size">A+</button>
+        <button id="contrastToggle" class="contrast-button" type="button" aria-pressed="false">
+          <span aria-hidden="true">◐</span> High contrast
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Campus Corner Cafe home">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span><strong>Campus Corner</strong><small>Cafe</small></span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div id="navLinks" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button id="cartButton" class="cart-button" type="button" aria-label="Open shopping cart, 0 items" aria-controls="cartPanel">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H7M10 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
+        <span class="cart-label">Cart</span>
+        <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Your campus pick-me-up</p>
+          <h1>Fresh food. Great coffee. <em>Ready when you are.</em></h1>
+          <p class="hero-text">Order between classes, choose your pickup time, and collect without the queue. Every meal and drink is prepared fresh, just the way you like it.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#menu">Order now <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#menu">View menu</a>
+          </div>
+          <div class="hero-proof" aria-label="Cafe highlights">
+            <span><b>4.8</b> student rating</span>
+            <span><b>10–15 min</b> average prep</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="images/hero-cafe.png" alt="A breakfast wrap, fresh salad and cappuccino on a timber café table">
+          <div class="pickup-card">
+            <span class="pickup-icon" aria-hidden="true">✓</span>
+            <span><strong>Pickup made easy</strong><small>Order ahead. Skip the queue.</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-strip" aria-label="Cafe information">
+      <div class="container info-grid">
+        <article><span aria-hidden="true">◷</span><div><strong>Monday–Friday</strong><small>7:30 am – 5:30 pm</small></div></article>
+        <article><span aria-hidden="true">⌖</span><div><strong>Campus location</strong><small>University precinct</small></div></article>
+        <article><span aria-hidden="true">▣</span><div><strong>Order for pickup</strong><small>Choose a convenient time</small></div></article>
+        <article><span aria-hidden="true">♨</span><div><strong>Made fresh</strong><small>Meals, snacks & drinks</small></div></article>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section section">
+      <div class="container">
+        <div class="section-heading menu-heading">
+          <div>
+            <p class="eyebrow">Made for busy days</p>
+            <h2>Find your campus favourite</h2>
+            <p>Freshly prepared, easy to customise, and ready when you are.</p>
+          </div>
+          <label class="search-box" for="menuSearch">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+            <span class="sr-only">Search the menu</span>
+            <input id="menuSearch" type="search" placeholder="Search the menu…" autocomplete="off">
+          </label>
+        </div>
+
+        <div id="categoryFilters" class="category-filters" role="group" aria-label="Filter menu by category"></div>
+        <p id="menuStatus" class="menu-status" aria-live="polite"></p>
+        <div id="menuGrid" class="menu-grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section section">
+      <div class="container about-grid">
+        <div class="about-accent" aria-hidden="true"><span>Good food</span><strong>made for<br>campus life.</strong></div>
+        <div class="about-copy">
+          <p class="eyebrow">Our corner of campus</p>
+          <h2>Fast enough for your break. Fresh enough to make your day.</h2>
+          <p>Campus Corner Cafe serves affordable food and drinks to university students, staff, and visitors. Our menu is designed around real campus days—from early lectures to late-afternoon study sessions.</p>
+          <p>Online ordering brings every pickup into one clear system, helping us reduce queues, duplicated orders, waiting time, and manual ordering errors. You choose the details; our team prepares it accurately.</p>
+          <div class="about-values">
+            <span><b>01</b> Fresh daily</span>
+            <span><b>02</b> Student friendly</span>
+            <span><b>03</b> Easy pickup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div><p class="eyebrow">Short on time?</p><h2>We’ll have your order waiting.</h2></div>
+        <a class="button button-light" href="#menu">Choose your favourites <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Corner</strong><small>Cafe</small></span></a>
+        <p>Fresh food, excellent coffee, and easier campus days.</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+      <div><h3>Visit us</h3><p>University Precinct<br>Burwood, VIC 3125</p><p>Pickup counter inside</p></div>
+      <div><h3>Contact</h3><p><a href="tel:+61390000000">(03) 9000 0000</a><br><a href="mailto:hello@campuscorner.example">hello@campuscorner.example</a></p></div>
+      <div><h3>Opening hours</h3><p>Monday–Friday<br>7:30 am – 5:30 pm</p><p>Closed weekends</p></div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="currentYear"></span> Campus Corner Cafe. All rights reserved.</p>
+      <div><button class="text-link legal-link" type="button" data-legal="Privacy Policy">Privacy Policy</button><button class="text-link legal-link" type="button" data-legal="Terms and Conditions">Terms &amp; Conditions</button></div>
+    </div>
+  </footer>
+
+  <dialog id="customiseModal" class="modal customise-modal" aria-labelledby="customiseTitle">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close product customisation">×</button>
+      <div id="customiseImage" class="modal-product-image"></div>
+      <form id="customiseForm" class="customise-form">
+        <div class="modal-heading"><p id="customiseCategory" class="eyebrow"></p><h2 id="customiseTitle"></h2><p id="customiseDescription"></p></div>
+        <div id="customisationFields"></div>
+        <div class="form-group"><label for="specialInstructions">Special instructions <span>(optional)</span></label><textarea id="specialInstructions" rows="3" maxlength="180" placeholder="Allergies or preparation requests"></textarea></div>
+        <div class="quantity-row">
+          <span>Quantity</span>
+          <div class="stepper"><button id="modalQtyMinus" type="button" aria-label="Decrease quantity">−</button><output id="modalQuantity" aria-live="polite">1</output><button id="modalQtyPlus" type="button" aria-label="Increase quantity">+</button></div>
+        </div>
+        <div class="modal-actions"><button class="button button-ghost" type="button" data-close-modal>Cancel</button><button id="addToCartButton" class="button button-primary grow" type="submit">Add to cart · <span id="modalPrice">$0.00</span></button></div>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="cartOverlay" class="cart-overlay" hidden></div>
+  <aside id="cartPanel" class="cart-panel" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">Your order</p><h2 id="cartTitle">Campus cart</h2></div><button id="cartClose" class="modal-close inline" type="button" aria-label="Close shopping cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartFooter" class="cart-footer">
+      <div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+      <div class="total-row muted"><span>GST included</span><span id="cartGst">$0.00</span></div>
+      <div class="total-row final"><span>Total</span><strong id="cartTotal">$0.00 AUD</strong></div>
+      <button id="checkoutButton" class="button button-primary full" type="button">Proceed to checkout <span aria-hidden="true">→</span></button>
+      <p class="secure-note">Front-end demonstration · No real payment is processed</p>
+    </div>
+  </aside>
+
+  <dialog id="checkoutModal" class="modal checkout-modal" aria-labelledby="checkoutTitle">
+    <div class="checkout-shell">
+      <button class="modal-close" type="button" data-close-checkout aria-label="Close checkout">×</button>
+      <div class="checkout-main">
+        <p class="eyebrow">Almost there</p><h2 id="checkoutTitle">Pickup details</h2>
+        <p class="demo-banner"><strong>Demonstration checkout:</strong> no real payment will be taken.</p>
+        <form id="checkoutForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group full-span"><label for="customerName">Customer name *</label><input id="customerName" name="customerName" required autocomplete="name"></div>
+            <div class="form-group"><label for="mobile">Mobile number *</label><input id="mobile" name="mobile" type="tel" required autocomplete="tel" placeholder="04xx xxx xxx"></div>
+            <div class="form-group"><label for="email">Email address *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+            <div class="form-group"><label for="pickupDate">Pickup date *</label><input id="pickupDate" name="pickupDate" type="date" required></div>
+            <div class="form-group"><label for="pickupTime">Pickup time *</label><input id="pickupTime" name="pickupTime" type="time" min="07:30" max="17:30" step="900" required><small>Weekdays, 7:30 am–5:30 pm</small></div>
+          </div>
+          <fieldset class="payment-options"><legend>Payment method *</legend><label><input type="radio" name="payment" value="Card" required checked><span>Card<small>Demo only</small></span></label><label><input type="radio" name="payment" value="Apple Pay"><span>Apple Pay<small>Demo only</small></span></label><label><input type="radio" name="payment" value="Google Pay"><span>Google Pay<small>Demo only</small></span></label></fieldset>
+          <div class="form-group"><label for="orderNotes">Order notes <span>(optional)</span></label><textarea id="orderNotes" name="orderNotes" rows="3" maxlength="250" placeholder="Anything the café should know?"></textarea></div>
+          <div id="checkoutError" class="form-message error" role="alert" hidden></div>
+          <button class="button button-primary full" type="submit">Place demonstration order</button>
+        </form>
+      </div>
+      <aside class="order-summary"><p class="eyebrow">Order summary</p><div id="checkoutItems"></div><div class="total-row final"><span>Total</span><strong id="checkoutTotal">$0.00 AUD</strong></div></aside>
+    </div>
+  </dialog>
+
+  <dialog id="confirmationModal" class="modal confirmation-modal" aria-labelledby="confirmationTitle">
+    <div class="confirmation-card"><div class="success-mark" aria-hidden="true">✓</div><p class="eyebrow">Order received</p><h2 id="confirmationTitle">See you soon!</h2><p>Your demonstration order <strong id="confirmationNumber"></strong> is confirmed for pickup at <strong id="confirmationTime"></strong>.</p><div class="prep-time"><span>Estimated preparation time</span><strong id="preparationTime">10–15 minutes</strong></div><button id="returnToMenu" class="button button-primary full" type="button">Return to menu</button></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
